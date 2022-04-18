@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cognizant.dto.Dto;
 import com.cognizant.exception.WatchListNotFoundException;
 import com.cognizant.model.Company;
+import com.cognizant.model.Stock;
 import com.cognizant.service.CompanyService;
 
 @RestController
@@ -37,10 +38,7 @@ public class CompanyController {
 	}
 	
 	
-	@GetMapping("/stocks")
-	public List<Company> getAllStocks() {
-		return service.getStocks();
-	}
+	
 	
 	
 	@PostMapping(path = "/watchList")

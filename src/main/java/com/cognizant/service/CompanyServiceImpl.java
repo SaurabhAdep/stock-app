@@ -41,17 +41,10 @@ public class CompanyServiceImpl implements CompanyService {
 		return companyRepo.getWatchList(userId);
 	}
 	
-	@Override
-	public List<Company> getStocks() {
-		return companyRepo.getStocks();
-	}
+	
 
    
-    @Override
-	public String addToWatchList(int userId, int companyId) {
-    	watchRepo.addCompanyToWatchList(userId, companyId);
-		return "Company added to watch List successfully...";
-	}
+    
 
 	@Transactional
 	public String deleteFromWatchList(int userId, int companyId) throws WatchListNotFoundException {
@@ -70,6 +63,13 @@ public class CompanyServiceImpl implements CompanyService {
 		return watchId + " deleted successfully....";
 	}
 
+	
+
+	@Override
+	public String addToWatchList(int userId, int companyId) {
+    	watchRepo.addCompanyToWatchList(userId, companyId);
+		return "Company added to watch List successfully...";
+	}
 	
 	
 
